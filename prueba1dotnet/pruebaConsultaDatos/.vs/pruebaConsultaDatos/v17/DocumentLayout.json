@@ -1,0 +1,88 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\adrian.castrobeiro\\source\\repos\\pruebaConsultaDatos\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{023BC50C-DA4E-4FD4-9D95-88AA57A7C3F3}|pruebaConsultaDatos\\pruebaConsultaDatos.csproj|c:\\users\\adrian.castrobeiro\\source\\repos\\pruebaconsultadatos\\pruebaconsultadatos\\datos\\personaadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{023BC50C-DA4E-4FD4-9D95-88AA57A7C3F3}|pruebaConsultaDatos\\pruebaConsultaDatos.csproj|solutionrelative:pruebaconsultadatos\\datos\\personaadmin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{023BC50C-DA4E-4FD4-9D95-88AA57A7C3F3}|pruebaConsultaDatos\\pruebaConsultaDatos.csproj|c:\\users\\adrian.castrobeiro\\source\\repos\\pruebaconsultadatos\\pruebaconsultadatos\\views\\persona\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{023BC50C-DA4E-4FD4-9D95-88AA57A7C3F3}|pruebaConsultaDatos\\pruebaConsultaDatos.csproj|solutionrelative:pruebaconsultadatos\\views\\persona\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{023BC50C-DA4E-4FD4-9D95-88AA57A7C3F3}|pruebaConsultaDatos\\pruebaConsultaDatos.csproj|c:\\users\\adrian.castrobeiro\\source\\repos\\pruebaconsultadatos\\pruebaconsultadatos\\controllers\\personacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{023BC50C-DA4E-4FD4-9D95-88AA57A7C3F3}|pruebaConsultaDatos\\pruebaConsultaDatos.csproj|solutionrelative:pruebaconsultadatos\\controllers\\personacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{023BC50C-DA4E-4FD4-9D95-88AA57A7C3F3}|pruebaConsultaDatos\\pruebaConsultaDatos.csproj|c:\\users\\adrian.castrobeiro\\source\\repos\\pruebaconsultadatos\\pruebaconsultadatos\\models\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{023BC50C-DA4E-4FD4-9D95-88AA57A7C3F3}|pruebaConsultaDatos\\pruebaConsultaDatos.csproj|solutionrelative:pruebaconsultadatos\\models\\persona.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\source\\repos\\pruebaConsultaDatos\\pruebaConsultaDatos\\Views\\Persona\\Index.cshtml",
+              "RelativeDocumentMoniker": "pruebaConsultaDatos\\Views\\Persona\\Index.cshtml",
+              "ToolTip": "C:\\Users\\adrian.castrobeiro\\source\\repos\\pruebaConsultaDatos\\pruebaConsultaDatos\\Views\\Persona\\Index.cshtml",
+              "RelativeToolTip": "pruebaConsultaDatos\\Views\\Persona\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-02T09:40:18.831Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "PersonaController.cs",
+              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\source\\repos\\pruebaConsultaDatos\\pruebaConsultaDatos\\Controllers\\PersonaController.cs",
+              "RelativeDocumentMoniker": "pruebaConsultaDatos\\Controllers\\PersonaController.cs",
+              "ToolTip": "C:\\Users\\adrian.castrobeiro\\source\\repos\\pruebaConsultaDatos\\pruebaConsultaDatos\\Controllers\\PersonaController.cs",
+              "RelativeToolTip": "pruebaConsultaDatos\\Controllers\\PersonaController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T09:34:07.378Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PersonaAdmin.cs",
+              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\source\\repos\\pruebaConsultaDatos\\pruebaConsultaDatos\\Datos\\PersonaAdmin.cs",
+              "RelativeDocumentMoniker": "pruebaConsultaDatos\\Datos\\PersonaAdmin.cs",
+              "ToolTip": "C:\\Users\\adrian.castrobeiro\\source\\repos\\pruebaConsultaDatos\\pruebaConsultaDatos\\Datos\\PersonaAdmin.cs",
+              "RelativeToolTip": "pruebaConsultaDatos\\Datos\\PersonaAdmin.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T08:58:26.894Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Persona.cs",
+              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\source\\repos\\pruebaConsultaDatos\\pruebaConsultaDatos\\Models\\Persona.cs",
+              "RelativeDocumentMoniker": "pruebaConsultaDatos\\Models\\Persona.cs",
+              "ToolTip": "C:\\Users\\adrian.castrobeiro\\source\\repos\\pruebaConsultaDatos\\pruebaConsultaDatos\\Models\\Persona.cs",
+              "RelativeToolTip": "pruebaConsultaDatos\\Models\\Persona.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-02T08:45:03.691Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
