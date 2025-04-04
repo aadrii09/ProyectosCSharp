@@ -1,33 +1,8 @@
 [
   {
     "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
-    "Method": "GetCategorias",
-    "RelativePath": "api/Categorias",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 403
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
     "Method": "CrearCategoria",
-    "RelativePath": "api/Categorias",
+    "RelativePath": "api/categoria",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -72,7 +47,7 @@
   {
     "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
     "Method": "GetCategoria",
-    "RelativePath": "api/Categorias/{categoriaId}",
+    "RelativePath": "api/categoria/mostrar/{categoriaId}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -118,5 +93,30 @@
       }
     ],
     "EndpointName": "GetCategoria"
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
+    "Method": "GetCategorias",
+    "RelativePath": "api/categoria/mostrarTodo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

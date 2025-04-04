@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiPeliculas.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/categoria")]
     [ApiController]
     public class CategoriasController : ControllerBase
     {
@@ -20,7 +20,7 @@ namespace ApiPeliculas.Controllers
             _categoriaRepositorio = categoriaRepo;
             _mapper = mapper;
         }
-        [HttpGet]
+        [HttpGet("mostrarTodo")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult GetCategorias()
@@ -35,7 +35,7 @@ namespace ApiPeliculas.Controllers
         }
 
 
-        [HttpGet("{categoriaId:int}", Name = "GetCategoria")]
+        [HttpGet("mostrar/{categoriaId:int}", Name = "GetCategoria")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
