@@ -107,12 +107,79 @@ namespace ApiPeliculas.Controllers
             {
                 return BadRequest(ModelState);
             }
+            var categoriaExistente = _categoriaRepositorio.GetCategoria(categoriaId);
+            if (categoriaExistente == null)
+            {
+                return NotFound($"No se encontro la categoria con ID{categoriaId}");
+            }
 
             var categoria = _mapper.Map<Categoria>(categoriaDto);
 
             if (!_categoriaRepositorio.ActualizarCategoria(categoria))
             {
                 ModelState.AddModelError("", $"Algo salio mal al actualizar el registro {categoria.Nombre}");
+                return StatusCode(500, ModelState);
+            }
+            return NoContent();
+        }
+
+        [HttpPut("actualizar/{categoriaId:int}", Name = "PutCategoria")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+        public IActionResult ActualizarPutCategoria(int categoriaId, [FromBody] CategoriaDto categoriaDto)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (categoriaDto == null || categoriaId != categoriaDto.Id)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var categoriaExistente = _categoriaRepositorio.GetCategoria(categoriaId);
+            if (categoriaExistente == null)
+            {
+                return NotFound($"No se encontro la categoria con ID{categoriaId}");
+            }
+
+            var categoria = _mapper.Map<Categoria>(categoriaDto);
+
+            if (!_categoriaRepositorio.ActualizarCategoria(categoria))
+            {
+                ModelState.AddModelError("", $"Algo salio mal al actualizar el registro {categoria.Nombre}");
+                return StatusCode(500, ModelState);
+            }
+            return NoContent();
+        }
+
+        [HttpDelete("borrar/{categoriaId:int}", Name = "DeleteCategoria")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+        public IActionResult EliminarCategoria(int categoriaId)
+        {
+          
+            if (!_categoriaRepositorio.ExisteCategoria(categoriaId))
+            {
+                return NotFound($"No se encontro la categoria con ID{categoriaId}");
+            }
+            
+
+            var categoria = _categoriaRepositorio.GetCategoria(categoriaId);
+
+            if(!_categoriaRepositorio.EliminarCategoria(categoria))
+            {
+                ModelState.AddModelError("", $"Algo salio mal al eliminar el registro {categoria.Nombre}");
                 return StatusCode(500, ModelState);
             }
             return NoContent();
