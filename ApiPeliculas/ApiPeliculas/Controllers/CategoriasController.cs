@@ -1,4 +1,6 @@
 ﻿using ApiPeliculas.Modelos.Dtos;
+using ApiPeliculas.Models;
+using ApiPeliculas.Models.Dtos;
 using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
@@ -50,10 +52,42 @@ namespace ApiPeliculas.Controllers
             }
 
             var itemCategoriaDto = _mapper.Map<CategoriaDto>(itemCategoria);
-            return Ok(itemCategoriaDto);
-
-            
+            return Ok(itemCategoriaDto);  
         }
 
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+
+        public IActionResult CrearCategoria([FromBody] CrearCategoriaDto crearCategoriaDto)
+        {
+
+          if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+          if(crearCategoriaDto== null)
+            {
+                return BadRequest(ModelState);
+            }
+
+          if(_categoriaRepositorio.ExisteCategoria(crearCategoriaDto.Nombre))
+            {
+                ModelState.AddModelError("", "La categoria ya existe");
+                return StatusCode(404, ModelState);
+            }
+
+          var cartegoria = _mapper.Map<Categoria>(crearCategoriaDto);
+
+            if(!_categoriaRepositorio.CrearCategoria(cartegoria))
+            {
+                ModelState.AddModelError("", $"Error al guardar el registro {cartegoria.Nombre}");
+                return StatusCode(404, ModelState);
+            }
+            return CreatedAtRoute("GetCategoria", new { categoriaId = cartegoria.Id }, cartegoria);
+        }
     }
 }
