@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\adrian.castrobeiro\\Desktop\\Api_Curso\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj": {}
+    "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\adrian.castrobeiro\\Desktop\\Api_Curso\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj": {
+    "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\adrian.castrobeiro\\Desktop\\Api_Curso\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj",
+        "projectUniqueName": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj",
         "projectName": "ApiPeliculas",
-        "projectPath": "C:\\Users\\adrian.castrobeiro\\Desktop\\Api_Curso\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj",
+        "projectPath": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj",
         "packagesPath": "C:\\Users\\adrian.castrobeiro\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\adrian.castrobeiro\\Desktop\\Api_Curso\\ApiPeliculas\\ApiPeliculas\\obj\\",
+        "outputPath": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -50,6 +50,10 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
+            "AutoMapper": {
+              "target": "Package",
+              "version": "[14.0.0, )"
+            },
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
               "version": "[9.0.3, )"
