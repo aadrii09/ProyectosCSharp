@@ -1,6 +1,6 @@
-# ApiPeliculas
+# Apis Varias
 
- APIs para gestionar Entidades. Estas APIs permiten realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) y algunas otras consultas sobre las entidades.
+APIs para gestionar Entidades. Estas APIs permiten realizar operaciones CRUD (Crear, Leer, Actualizar, Eliminar) y algunas otras consultas sobre las entidades.
 
 ## Características
 
