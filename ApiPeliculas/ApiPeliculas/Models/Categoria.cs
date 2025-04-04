@@ -11,5 +11,5 @@ namespace ApiPeliculas.Models
         [Required]
         [Display(Name = "Fecha de Creación")]
         public DateTime FechaCreacion { get; set; }
-}
+    }
 }
