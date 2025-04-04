@@ -7,6 +7,10 @@
       "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\repositorio\\categotiarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\repositorio\\categotiarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -17,10 +21,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\models\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\models\\dtos\\categoriadto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\repositorio\\categotiarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\repositorio\\categotiarepositorio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -50,15 +50,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Program.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Program.cs",
               "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Program.cs",
               "RelativeToolTip": "ApiPeliculas\\Program.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAgwCYAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAcwCYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-04T07:27:11.517Z"
+              "WhenOpened": "2025-04-04T07:27:11.517Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -68,14 +69,14 @@
               "RelativeDocumentMoniker": "ApiPeliculas\\Controllers\\CategoriasController.cs",
               "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\CategoriasController.cs",
               "RelativeToolTip": "ApiPeliculas\\Controllers\\CategoriasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAZAAAAAAAAAA==",
+              "ViewState": "AgIAAFYAAAAAAAAAAAAswB8AAAAQAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-04T07:04:13.024Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "PeliculasMapper.cs",
               "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\PeliculasMappers\\PeliculasMapper.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\PeliculasMappers\\PeliculasMapper.cs",
@@ -87,15 +88,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "CategotiaRepositorio.cs",
               "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Repositorio\\CategotiaRepositorio.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Repositorio\\CategotiaRepositorio.cs",
               "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Repositorio\\CategotiaRepositorio.cs",
               "RelativeToolTip": "ApiPeliculas\\Repositorio\\CategotiaRepositorio.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAgwAoAAAAVAAAAAAAAAA==",
+              "ViewState": "AgIAACkAAAAAAAAAAAA9wDcAAAAIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-03T16:17:41.791Z"
+              "WhenOpened": "2025-04-03T16:17:41.791Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -123,7 +125,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "CategoriaDto.cs",
               "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Models\\Dtos\\CategoriaDto.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Models\\Dtos\\CategoriaDto.cs",

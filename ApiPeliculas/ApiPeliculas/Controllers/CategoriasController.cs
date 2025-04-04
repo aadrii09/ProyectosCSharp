@@ -80,14 +80,42 @@ namespace ApiPeliculas.Controllers
                 return StatusCode(404, ModelState);
             }
 
-          var cartegoria = _mapper.Map<Categoria>(crearCategoriaDto);
+          var categoria = _mapper.Map<Categoria>(crearCategoriaDto);
 
-            if(!_categoriaRepositorio.CrearCategoria(cartegoria))
+            if(!_categoriaRepositorio.CrearCategoria(categoria))
             {
-                ModelState.AddModelError("", $"Error al guardar el registro {cartegoria.Nombre}");
+                ModelState.AddModelError("", $"Error al guardar el registro {categoria.Nombre}");
                 return StatusCode(404, ModelState);
             }
-            return CreatedAtRoute("GetCategoria", new { categoriaId = cartegoria.Id }, cartegoria);
+            return CreatedAtRoute("GetCategoria", new { categoriaId = categoria.Id }, categoria);
+        }
+
+        [HttpPatch("actualizar/{categoriaId:int}", Name = "PatchCategoria")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+
+        public IActionResult ActualizarPatchCategoria(int categoriaId, [FromBody] CategoriaDto categoriaDto)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (categoriaDto == null || categoriaId != categoriaDto.Id)
+            {
+                return BadRequest(ModelState);
+            }
+
+            var categoria = _mapper.Map<Categoria>(categoriaDto);
+
+            if (!_categoriaRepositorio.ActualizarCategoria(categoria))
+            {
+                ModelState.AddModelError("", $"Algo salio mal al actualizar el registro {categoria.Nombre}");
+                return StatusCode(500, ModelState);
+            }
+            return NoContent();
         }
     }
 }
