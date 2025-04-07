@@ -122,5 +122,29 @@ namespace ApiPeliculas.Controllers
             return NoContent();
         }
 
+        [HttpDelete("borrar/{peliculaId:int}", Name = "DeletePelicula")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public IActionResult EliminarPelicula(int peliculaId)
+        {
+            if (!_peliculaRepositorio.ExistePelicula(peliculaId))
+            {
+                return NotFound($"No se encontró la película con ID {peliculaId}");
+            }
+
+            var pelicula = _peliculaRepositorio.GetPelicula(peliculaId);
+
+            if (!_peliculaRepositorio.EliminarPelicula(pelicula))
+            {
+                ModelState.AddModelError("", $"Algo salió mal al eliminar el registro {pelicula.Titulo}");
+                return StatusCode(500, ModelState);
+            }
+            return NoContent();
+        }
+
+
     }
 }
