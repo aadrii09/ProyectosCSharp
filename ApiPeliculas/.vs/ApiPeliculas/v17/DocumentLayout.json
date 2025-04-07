@@ -40,7 +40,7 @@
               "RelativeDocumentMoniker": "ApiPeliculas\\Controllers\\PeliculasController.cs",
               "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\PeliculasController.cs",
               "RelativeToolTip": "ApiPeliculas\\Controllers\\PeliculasController.cs",
-              "ViewState": "AgIAAHcAAAAAAAAAAAAqwIQAAABBAAAAAAAAAA==",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAqwJIAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-07T06:41:22.919Z",
               "EditorCaption": ""
@@ -55,8 +55,7 @@
               "RelativeToolTip": "ApiPeliculas\\Repositorio\\PeliculaRepositorio.cs",
               "ViewState": "AgIAAAgAAAAAAAAAAAD4vxQAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-07T06:15:03.476Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-04-07T06:15:03.476Z"
             },
             {
               "$type": "Document",
