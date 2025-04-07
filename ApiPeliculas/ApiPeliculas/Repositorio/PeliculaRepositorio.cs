@@ -73,12 +73,12 @@ namespace ApiPeliculas.Repositorio
 
         public ICollection<Pelicula> GetPelicula()
         {
-            return _bd.Pelicula.OrderBy(c => c.Titulo).ToList();
+            return _bd.Pelicula.OrderBy(c => c.Id).ToList();
         }
 
         public ICollection<Pelicula> GetPeliculas()
         {
-            return _bd.Pelicula.Include(ca => ca.Categoria).OrderBy(c => c.Titulo).ToList();
+            return _bd.Pelicula.Include(ca => ca.Categoria).OrderBy(c => c.Id).ToList();
         }
 
         public ICollection<Pelicula> GetPeliculasCategoria(int categotiaId)

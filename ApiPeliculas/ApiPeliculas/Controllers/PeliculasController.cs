@@ -4,6 +4,7 @@ using ApiPeliculas.Models.Dtos;
 using ApiPeliculas.Repositorio;
 using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -13,19 +14,19 @@ namespace ApiPeliculas.Controllers
     [ApiController]
     public class PeliculasController : ControllerBase
     {
-            private readonly IPeliculaRepositorio _peliculaRepositorio;
-            private readonly IMapper _mapper;
+        private readonly IPeliculaRepositorio _peliculaRepositorio;
+        private readonly IMapper _mapper;
 
-            public PeliculasController(IPeliculaRepositorio peliculaRepo, IMapper mapper)
-            {
-                _peliculaRepositorio = peliculaRepo;
-                _mapper = mapper;
-            }
+        public PeliculasController(IPeliculaRepositorio peliculaRepo, IMapper mapper)
+        {
+            _peliculaRepositorio = peliculaRepo;
+            _mapper = mapper;
+        }
 
         [HttpGet("mostrarTodo")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
-        public IActionResult GetCategorias()
+        public IActionResult GetPelicula()
         {
             var listaPeliculas = _peliculaRepositorio.GetPeliculas();
             var listaPeliculasDto = new List<PeliculaDto>();
@@ -144,7 +145,21 @@ namespace ApiPeliculas.Controllers
             }
             return NoContent();
         }
-         //probando
 
+        [HttpGet("MostrarPeliculaXIdCategoria/{categoriaId:int}")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+        public IActionResult GetPeliculaCategoria(int categoriaId)
+        {
+            var listaPeliculas = _peliculaRepositorio.GetPeliculasCategoria(categoriaId);
+            var listaPeliculasDto = new List<PeliculaDto>();
+            foreach (var lista in listaPeliculas)
+            {
+                listaPeliculasDto.Add(_mapper.Map<PeliculaDto>(lista));
+            }
+            return Ok(listaPeliculasDto);
+        }
     }
 }
