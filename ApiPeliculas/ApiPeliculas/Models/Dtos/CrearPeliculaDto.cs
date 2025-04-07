@@ -10,8 +10,8 @@ namespace ApiPeliculas.Models.Dtos
 
         public string RutaImagen { get; set; }
 
-        public enum TipoClasificacion { tres, siete, trece, diecisiete, dieciocho }
-        public TipoClasificacion Clasificacion { get; set; }
+        public enum CrearTipoClasificacion { tres, siete, trece, diecisiete, dieciocho }
+        public CrearTipoClasificacion Clasificacion { get; set; }
 
 
        

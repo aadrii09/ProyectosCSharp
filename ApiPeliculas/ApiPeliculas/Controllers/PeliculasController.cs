@@ -55,6 +55,7 @@ namespace ApiPeliculas.Controllers
         }
 
         [HttpPost]
+        [ProducesResponseType(201, Type = typeof(PeliculaDto))]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -86,6 +87,39 @@ namespace ApiPeliculas.Controllers
             }
 
             return CreatedAtRoute("GetPelicula", new { peliculaId = pelicula.Id }, pelicula);
+        }
+
+        [HttpPatch("actualizar/{peliculaId:int}", Name = "PatchPelicula")]
+        [ProducesResponseType(StatusCodes.Status204NoContent)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+
+        public IActionResult ActualizarPatchPelicula(int peliculaId, [FromBody] PeliculaDto peliculaDto)
+        {
+
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (peliculaDto == null || peliculaId != peliculaDto.Id)
+            {
+                return BadRequest(ModelState);
+            }
+            var peliculaExistente = _peliculaRepositorio.GetPelicula(peliculaId);
+            if (peliculaExistente == null)
+            {
+                return NotFound($"No se encontro la pelicula con ID {peliculaId}");
+            }
+
+            var pelicula = _mapper.Map<Pelicula>(peliculaDto);
+
+            if (!_peliculaRepositorio.ActualizarPelicula(pelicula))
+            {
+                ModelState.AddModelError("", $"Algo salio mal al actualizar el registro {pelicula.Titulo}");
+                return StatusCode(500, ModelState);
+            }
+            return NoContent();
         }
 
     }
