@@ -1,4 +1,7 @@
-﻿using ApiPeliculas.Repositorio.IRepositorio;
+﻿using ApiPeliculas.Modelos.Dtos;
+using ApiPeliculas.Models.Dtos;
+using ApiPeliculas.Repositorio;
+using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -17,5 +20,19 @@ namespace ApiPeliculas.Controllers
                 _peliculaRepositorio = peliculaRepo;
                 _mapper = mapper;
             }
+
+        [HttpGet("mostrarTodo")]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        public IActionResult GetCategorias()
+        {
+            var listaPeliculas = _peliculaRepositorio.GetPeliculas();
+            var listaPeliculasDto = new List<PeliculaDto>();
+            foreach (var lista in listaPeliculas)
+            {
+                listaPeliculasDto.Add(_mapper.Map<PeliculaDto>(lista));
+            }
+            return Ok(listaPeliculasDto);
+        }
     }
 }

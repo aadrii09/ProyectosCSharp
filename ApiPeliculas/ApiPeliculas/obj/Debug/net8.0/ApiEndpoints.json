@@ -279,5 +279,30 @@
         "StatusCode": 200
       }
     ]
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.PeliculasController",
+    "Method": "GetCategorias",
+    "RelativePath": "api/peliculas/mostrarTodo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
   }
 ]

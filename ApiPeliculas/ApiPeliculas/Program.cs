@@ -14,8 +14,9 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-//AQUI AÑADO LOS REPOSITORIOS
+//AQUI AÑADO LOS REPOSITORIOS DE CATEGORIAS y PELICULAS
 builder.Services.AddScoped<ICategoriaRepositorio, CategotiaRepositorio>();
+builder.Services.AddScoped<IPeliculaRepositorio, PeliculaRepositorio>();
 
 //AQUI AÑADO EL AUTOMAPPER
 builder.Services.AddAutoMapper(typeof(PeliculasMapper));
