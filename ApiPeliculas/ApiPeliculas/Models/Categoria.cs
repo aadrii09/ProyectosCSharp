@@ -11,5 +11,11 @@ namespace ApiPeliculas.Models
         [Required]
         [Display(Name = "Fecha de Creación")]
         public DateTime FechaCreacion { get; set; }
+
+
+
+        // Relación con Pelicula, para hacerla bidireccional
+        //public virtual ICollection<Pelicula> Peliculas { get; set; }
+
     }
 }

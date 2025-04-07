@@ -1,10 +1,11 @@
 ﻿using ApiPeliculas.Data;
 using ApiPeliculas.Models;
 using ApiPeliculas.Repositorio.IRepositorio;
+using Microsoft.EntityFrameworkCore;
 
 namespace ApiPeliculas.Repositorio
 {
-    public class PeliculaRepositorio : ICategoriaRepositorio
+    public class PeliculaRepositorio : IPeliculaRepositorio
     {
         private readonly ApplicationDbContext _bd;
 
@@ -14,45 +15,60 @@ namespace ApiPeliculas.Repositorio
             _bd = bd;
         }
 
-        public bool ActualizarCategoria(Pelicula pelicula)
+        public bool ActualizarPelicula(Pelicula pelicula)
         {
             pelicula.FechaEstreno = DateTime.Now;
             _bd.Pelicula.Update(pelicula); 
+            return Guardar(); 
+        }
+
+        public IEnumerable<Pelicula> BuscarPelicula(string titulo)
+        {
+            IQueryable<Pelicula> query = _bd.Pelicula;
+            if (!string.IsNullOrEmpty(titulo))
+            {
+                query = query.Where(e => e.Titulo.ToLower().Contains(titulo.ToLower()) || e.Descripcion.ToLower().Contains(titulo.ToLower()));
+            }
+            return query.ToList();
+        }
+
+        public bool CrearPelicula(Pelicula pelicula)
+        {
+            pelicula.FechaEstreno = DateTime.Now;
+            _bd.Pelicula.Add(pelicula);
             return Guardar();
         }
 
-        public bool CrearCategoria(Categoria categoria)
+        public bool EliminarPelicula(Pelicula pelicula)
         {
-            categoria.FechaCreacion = DateTime.Now;
-            _bd.Categoria.Add(categoria);
+            _bd.Pelicula.Remove(pelicula);
             return Guardar();
         }
 
-        public bool EliminarCategoria(Categoria categoria)
+        public bool ExistePelicula(int Id)
         {
-            _bd.Categoria.Remove(categoria);
-            return Guardar();
+            return _bd.Pelicula.Any(c => c.Id == Id);
         }
 
-        public bool ExisteCategoria(int Id)
+        public bool ExistePelicula(string titulo)
         {
-            return _bd.Categoria.Any(c => c.Id == Id);
-        }
-
-        public bool ExisteCategoria(string nombre)
-        {
-            bool valor = _bd.Categoria.Any(c => c.Nombre.ToLower().Trim() == nombre.ToLower().Trim());
+            bool valor = _bd.Pelicula.Any(c => c.Titulo.ToLower().Trim() == titulo.ToLower().Trim());
             return valor;
         }
 
-        public Categoria GetCategoria(int CategoriaId)
+        public Pelicula GetPelicula(int PeliculaId)
         {
-            return _bd.Categoria.FirstOrDefault(c => c.Id == CategoriaId);
+            return _bd.Pelicula.FirstOrDefault(c => c.Id == PeliculaId);
         }
 
-        public ICollection<Categoria> GetCategorias()
+        public ICollection<Pelicula> GetPelicula()
         {
-            return _bd.Categoria.OrderBy(c => c.Nombre).ToList();
+            return _bd.Pelicula.OrderBy(c => c.Titulo).ToList();
+        }
+
+        public ICollection<Pelicula> GetPeliculasCategoria(int categotiaId)
+        {
+            return _bd.Pelicula.Include(ca => ca.Categoria).Where(ca => ca.CategoriaId == categotiaId).ToList();
         }
 
         public bool Guardar()
