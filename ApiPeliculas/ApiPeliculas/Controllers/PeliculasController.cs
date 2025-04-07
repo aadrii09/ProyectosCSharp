@@ -1,4 +1,5 @@
 ﻿using ApiPeliculas.Modelos.Dtos;
+using ApiPeliculas.Models;
 using ApiPeliculas.Models.Dtos;
 using ApiPeliculas.Repositorio;
 using ApiPeliculas.Repositorio.IRepositorio;
@@ -34,5 +35,58 @@ namespace ApiPeliculas.Controllers
             }
             return Ok(listaPeliculasDto);
         }
+
+        [HttpGet("mostrar/{peliculaId:int}", Name = "GetPelicula")]
+        [ProducesResponseType(StatusCodes.Status403Forbidden)]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        public IActionResult GetPelicula(int peliculaId)
+        {
+            var itemPelicula = _peliculaRepositorio.GetPelicula(peliculaId);
+
+            if (itemPelicula == null)
+            {
+                return NotFound();
+            }
+
+            var itemPeliculaDto = _mapper.Map<PeliculaDto>(itemPelicula);
+            return Ok(itemPeliculaDto);
+        }
+
+        [HttpPost]
+        [ProducesResponseType(StatusCodes.Status201Created)]
+        [ProducesResponseType(StatusCodes.Status400BadRequest)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+        public IActionResult CrearPelicula([FromBody] CrearPeliculaDto crearPeliculaDto)
+        {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (crearPeliculaDto == null)
+            {
+                return BadRequest(ModelState);
+            }
+
+            if (_peliculaRepositorio.ExistePelicula(crearPeliculaDto.Titulo))
+            {
+                ModelState.AddModelError("", "La película ya existe");
+                return StatusCode(404, ModelState);
+            }
+
+            var pelicula = _mapper.Map<Pelicula>(crearPeliculaDto);
+
+            if (!_peliculaRepositorio.CrearPelicula(pelicula))
+            {
+                ModelState.AddModelError("", $"Error al guardar el registro {pelicula.Titulo}");
+                return StatusCode(500, ModelState);
+            }
+
+            return CreatedAtRoute("GetPelicula", new { peliculaId = pelicula.Id }, pelicula);
+        }
+
     }
 }
