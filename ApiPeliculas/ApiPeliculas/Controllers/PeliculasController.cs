@@ -161,5 +161,29 @@ namespace ApiPeliculas.Controllers
             }
             return Ok(listaPeliculasDto);
         }
+
+        [HttpGet("buscar")]
+        [ProducesResponseType(StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+
+        public IActionResult Buscar(string titulo)
+        {
+
+            try
+            {
+                var resultado = _peliculaRepositorio.BuscarPelicula(titulo);
+                if (resultado.Any())
+                {
+                    return Ok(resultado);
+                }
+            }
+            catch (Exception)
+            {
+                return StatusCode(500, "Error en el servidor");
+            }
+            return NotFound("No se encontraron resultados");
+        }
+
     }
 }

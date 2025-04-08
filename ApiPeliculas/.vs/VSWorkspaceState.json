@@ -2,6 +2,7 @@
   "ExpandedNodes": [
     "",
     "\\ApiPeliculas",
+    "\\ApiPeliculas\\Controllers",
     "\\ApiPeliculas\\Models",
     "\\ApiPeliculas\\Models\\Dtos",
     "\\ApiPeliculas\\Repositorio",
