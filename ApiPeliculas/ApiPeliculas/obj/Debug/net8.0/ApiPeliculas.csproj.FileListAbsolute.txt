@@ -344,3 +344,5 @@ C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\ob
 C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\obj\Debug\net8.0\ApiPeliculas.pdb
 C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\obj\Debug\net8.0\ApiPeliculas.genruntimeconfig.cache
 C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\obj\Debug\net8.0\ref\ApiPeliculas.dll
+C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\bin\Debug\net8.0\Microsoft.Practices.ServiceLocation.dll
+C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\bin\Debug\net8.0\XAct.Core.PCL.dll

@@ -29,6 +29,7 @@ builder.Services.AddCors(options =>
 // Repositorios
 builder.Services.AddScoped<ICategoriaRepositorio, CategotiaRepositorio>();
 builder.Services.AddScoped<IPeliculaRepositorio, PeliculaRepositorio>();
+builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
 
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(PeliculasMapper));
