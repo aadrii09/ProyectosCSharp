@@ -2,7 +2,7 @@
 
 namespace ApiPeliculas.Models.Dtos
 {
-    public class UsuarioRegistro
+    public class UsuarioRegistroDto
     {
         [Required(ErrorMessage = "El usuario es obligatorio")]
         public string NombreUsuario { get; set; }
