@@ -46,7 +46,9 @@ builder.Services.AddAuthentication(x =>
 //Politicas de CORS para permitir el acceso a la API desde el cliente
 builder.Services.AddCors(p => p.AddPolicy("PoliticaCors", build =>
 {
-    build.WithOrigins("http://localhost:7273").AllowAnyMethod().AllowAnyHeader();
+    build.WithOrigins("http://localhost:5500", "http://127.0.0.1:5500")
+         .AllowAnyMethod()
+         .AllowAnyHeader();
 }));
 
 // Repositorios
