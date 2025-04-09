@@ -115,5 +115,10 @@ namespace ApiPeliculas.Repositorio
             return resp;
         }
 
+        public void Eliminar(Usuario itemUsuario)
+        {
+            _bd.Usuario.Remove(itemUsuario);
+            _bd.SaveChanges();
+        }
     }
 }

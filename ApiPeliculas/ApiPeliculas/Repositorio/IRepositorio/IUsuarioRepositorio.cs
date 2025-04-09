@@ -10,5 +10,6 @@ namespace ApiPeliculas.Repositorio.IRepositorio
         bool IsUniqueUsuario(string nombreUsuario);
         Task<UsuarioLoginRespuestaDto> Login(UsuarioLoginDto usuarioLoginDto);
         Task<Usuario> Registro(UsuarioRegistroDto usuarioRegistroDto);
+        void Eliminar(Usuario itemUsuario);
     }
     }

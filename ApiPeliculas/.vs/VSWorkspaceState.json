@@ -1,12 +1,6 @@
 {
   "ExpandedNodes": [
-    "",
-    "\\ApiPeliculas",
-    "\\ApiPeliculas\\Controllers",
-    "\\ApiPeliculas\\Models",
-    "\\ApiPeliculas\\Models\\Dtos",
-    "\\ApiPeliculas\\Repositorio",
-    "\\ApiPeliculas\\Repositorio\\IRepositorio"
+    ""
   ],
   "SelectedNode": "\\ApiPeliculas.sln",
   "PreviewInSolutionExplorer": false
