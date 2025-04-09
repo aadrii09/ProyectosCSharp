@@ -6,10 +6,12 @@ using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using XAct.Diagnostics;
 
 namespace ApiPeliculas.Controllers
 {
-    //[Authorize(Roles = "Admin")]  /Autorizacion global para todos los endopoints del controller
+    //[Authorize(Roles = "Admin")]  //Autorizacion global para todos los endopoints del controller
+    //[ResponseCache(Duration= 20)] // Se puede poner aqui para que afecte de manera global a todos los endpoints
     [Route("api/categoria")]
     [ApiController]
     public class CategoriasController : ControllerBase
@@ -24,7 +26,9 @@ namespace ApiPeliculas.Controllers
         }
 
         //[AllowAnonymous]  /eso sirve para poner publico el endpoint en el caso de que este todo el controller en privado
+       
         [HttpGet("mostrarTodo")]
+        [ResponseCache(Duration = 20)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult GetCategorias()
@@ -40,6 +44,7 @@ namespace ApiPeliculas.Controllers
 
 
         [HttpGet("mostrar/{categoriaId:int}", Name = "GetCategoria")]
+        [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

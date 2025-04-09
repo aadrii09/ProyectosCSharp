@@ -86,6 +86,10 @@ builder.Services.AddCors(p => p.AddPolicy("PoliticaCors", build =>
          .AllowAnyHeader();
 }));
 
+//Soporte para cache
+builder.Services.AddResponseCaching();
+
+
 // Repositorios
 builder.Services.AddScoped<ICategoriaRepositorio, CategotiaRepositorio>();
 builder.Services.AddScoped<IPeliculaRepositorio, PeliculaRepositorio>();
