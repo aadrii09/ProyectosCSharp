@@ -1,10 +1,20 @@
+using System.Text;
 using ApiPeliculas.Data;
 using ApiPeliculas.PeliculasMapper;
 using ApiPeliculas.Repositorio;
 using ApiPeliculas.Repositorio.IRepositorio;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
+var key = builder.Configuration.GetValue<string>("ApiSettings:Secreta");
+
+//// Verifica que la clave tenga al menos 32 caracteres para HMAC-SHA256
+//if (string.IsNullOrEmpty(key) || Encoding.ASCII.GetBytes(key).Length < 32)
+//{
+//    throw new ArgumentException("La clave secreta en ApiSettings:Secreta debe tener al menos 32 caracteres");
+//}
 
 // Add services to the container.
 builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
@@ -14,17 +24,30 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-// Configuración CORS (permite todo, incluyendo 'null')
-builder.Services.AddCors(options =>
+//Configuración de la autenticación JWT
+builder.Services.AddAuthentication(x =>
 {
-    options.AddPolicy("PermitirTodo", builder =>
+    x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+    x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+})
+.AddJwtBearer(x =>
+{
+    x.RequireHttpsMetadata = false;
+    x.SaveToken = true;
+    x.TokenValidationParameters = new TokenValidationParameters
     {
-        builder.SetIsOriginAllowed(_ => true)  // Permite cualquier origen (incluso 'null')
-               .AllowAnyMethod()
-               .AllowAnyHeader()
-               .AllowCredentials();  // Solo si usas autenticación/cookies
-    });
+        ValidateIssuerSigningKey = true,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(key)),
+        ValidateIssuer = false,
+        ValidateAudience = false
+    };
 });
+
+//Politicas de CORS para permitir el acceso a la API desde el cliente
+builder.Services.AddCors(p => p.AddPolicy("PoliticaCors", build =>
+{
+    build.WithOrigins("http://localhost:7273").AllowAnyMethod().AllowAnyHeader();
+}));
 
 // Repositorios
 builder.Services.AddScoped<ICategoriaRepositorio, CategotiaRepositorio>();
@@ -44,8 +67,14 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseCors("PermitirTodo");  // Aplica la política CORS aquí
+
+// Importante: UseCors debe ir antes de UseAuthentication y UseAuthorization
+app.UseCors("PoliticaCors");
+
+// Soporte de la autenticación JWT
+app.UseAuthentication();
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();

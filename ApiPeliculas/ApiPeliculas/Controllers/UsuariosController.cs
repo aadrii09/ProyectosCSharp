@@ -5,6 +5,7 @@ using ApiPeliculas.Models.Dtos;
 using ApiPeliculas.Repositorio;
 using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -25,6 +26,7 @@ namespace ApiPeliculas.Controllers
             this._respuestaApi = new();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("mostrarTodo")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -39,6 +41,7 @@ namespace ApiPeliculas.Controllers
             return Ok(listaUsuariosDto);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpGet("mostrar/{usuarioId:int}", Name = "GetUsuario")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -109,6 +112,7 @@ namespace ApiPeliculas.Controllers
                 return Ok(_respuestaApi);           
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("eliminar/{usuarioId:int}", Name = "EliminarUsuario")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]

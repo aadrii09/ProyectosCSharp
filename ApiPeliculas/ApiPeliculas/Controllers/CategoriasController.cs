@@ -3,11 +3,13 @@ using ApiPeliculas.Models;
 using ApiPeliculas.Models.Dtos;
 using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ApiPeliculas.Controllers
 {
+    //[Authorize(Roles = "Admin")]  /Autorizacion global para todos los endopoints del controller
     [Route("api/categoria")]
     [ApiController]
     public class CategoriasController : ControllerBase
@@ -20,6 +22,8 @@ namespace ApiPeliculas.Controllers
             _categoriaRepositorio = categoriaRepo;
             _mapper = mapper;
         }
+
+        //[AllowAnonymous]  /eso sirve para poner publico el endpoint en el caso de que este todo el controller en privado
         [HttpGet("mostrarTodo")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -55,6 +59,7 @@ namespace ApiPeliculas.Controllers
             return Ok(itemCategoriaDto);  
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -90,6 +95,8 @@ namespace ApiPeliculas.Controllers
             return CreatedAtRoute("GetCategoria", new { categoriaId = categoria.Id }, categoria);
         }
 
+
+        [Authorize(Roles = "Admin")]
         [HttpPatch("actualizar/{categoriaId:int}", Name = "PatchCategoria")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -123,6 +130,8 @@ namespace ApiPeliculas.Controllers
             return NoContent();
         }
 
+
+        [Authorize(Roles = "Admin")]
         [HttpPut("actualizar/{categoriaId:int}", Name = "PutCategoria")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -159,6 +168,8 @@ namespace ApiPeliculas.Controllers
             return NoContent();
         }
 
+
+        [Authorize(Roles = "Admin")]
         [HttpDelete("borrar/{categoriaId:int}", Name = "DeleteCategoria")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

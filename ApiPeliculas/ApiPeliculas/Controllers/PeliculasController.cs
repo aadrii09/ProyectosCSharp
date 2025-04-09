@@ -4,6 +4,7 @@ using ApiPeliculas.Models.Dtos;
 using ApiPeliculas.Repositorio;
 using ApiPeliculas.Repositorio.IRepositorio;
 using AutoMapper;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -26,6 +27,7 @@ namespace ApiPeliculas.Controllers
         [HttpGet("mostrarTodo")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
+        //[EnableCors("PoliticaCors")] //Aplica la politica CORS a este endpoint
         public IActionResult GetPelicula()
         {
             var listaPeliculas = _peliculaRepositorio.GetPeliculas();
@@ -55,6 +57,7 @@ namespace ApiPeliculas.Controllers
             return Ok(itemPeliculaDto);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ProducesResponseType(201, Type = typeof(PeliculaDto))]
         [ProducesResponseType(StatusCodes.Status201Created)]
@@ -90,6 +93,7 @@ namespace ApiPeliculas.Controllers
             return CreatedAtRoute("GetPelicula", new { peliculaId = pelicula.Id }, pelicula);
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpPatch("actualizar/{peliculaId:int}", Name = "PatchPelicula")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status500InternalServerError)]
@@ -123,6 +127,7 @@ namespace ApiPeliculas.Controllers
             return NoContent();
         }
 
+        [Authorize(Roles = "Admin")]
         [HttpDelete("borrar/{peliculaId:int}", Name = "DeletePelicula")]
         [ProducesResponseType(StatusCodes.Status204NoContent)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
