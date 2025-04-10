@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\controllers\\version 2.0\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\controllers\\version 2.0\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\controllers\\version 1.0\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\controllers\\version 1.0\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\middleware\\exceptionmiddleware.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|c:\\users\\adrian.castrobeiro\\desktop\\proyectoscsharp\\apipeliculas\\apipeliculas\\apipeliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{867C7643-0A69-43F5-B1F5-4EB1E39B8610}|ApiPeliculas\\ApiPeliculas.csproj|solutionrelative:apipeliculas\\apipeliculas.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +22,34 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ExceptionMiddleware.cs",
+              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeDocumentMoniker": "ApiPeliculas\\Middleware\\ExceptionMiddleware.cs",
+              "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Middleware\\ExceptionMiddleware.cs",
+              "RelativeToolTip": "ApiPeliculas\\Middleware\\ExceptionMiddleware.cs",
+              "ViewState": "AgIAACYAAAAAAAAAAAAqwCkAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T11:30:13.837Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ApiPeliculas",
+              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj",
+              "RelativeDocumentMoniker": "ApiPeliculas\\ApiPeliculas.csproj",
+              "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\ApiPeliculas.csproj",
+              "RelativeToolTip": "ApiPeliculas\\ApiPeliculas.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-04-10T11:28:49.612Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -35,38 +61,12 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CategoriasController.cs",
-              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\Version 2.0\\CategoriasController.cs",
-              "RelativeDocumentMoniker": "ApiPeliculas\\Controllers\\Version 2.0\\CategoriasController.cs",
-              "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\Version 2.0\\CategoriasController.cs",
-              "RelativeToolTip": "ApiPeliculas\\Controllers\\Version 2.0\\CategoriasController.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAACAAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-10T08:58:39.731Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CategoriasController.cs",
-              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\Version 1.0\\CategoriasController.cs",
-              "RelativeDocumentMoniker": "ApiPeliculas\\Controllers\\Version 1.0\\CategoriasController.cs",
-              "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\Version 1.0\\CategoriasController.cs",
-              "RelativeToolTip": "ApiPeliculas\\Controllers\\Version 1.0\\CategoriasController.cs",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAswEQAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:04:46.87Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Program.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Program.cs",
               "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Program.cs",
               "RelativeToolTip": "ApiPeliculas\\Program.cs",
-              "ViewState": "AgIAAHgAAAAAAAAAAAAmwHkAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAJsAAAAAAAAAAAAgwKUAAABlAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T11:08:39.524Z",
               "EditorCaption": ""
