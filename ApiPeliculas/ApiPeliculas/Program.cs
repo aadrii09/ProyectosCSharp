@@ -3,6 +3,7 @@ using ApiPeliculas.Data;
 using ApiPeliculas.PeliculasMapper;
 using ApiPeliculas.Repositorio;
 using ApiPeliculas.Repositorio.IRepositorio;
+using Asp.Versioning;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
@@ -61,6 +62,23 @@ builder.Services.AddSwaggerGen(options =>
                 new List<string>()
             }
         });
+        options.SwaggerDoc("v1", new OpenApiInfo 
+        {
+            Title = "ApiPeliculas", 
+            Version = "v1",
+            Description = "API de Peliculas",
+            TermsOfService = new Uri("https://nombrekquiera.com/terms"),
+            Contact = new OpenApiContact
+            {
+                Name = "Soporte API",
+                Url = new Uri("https://nombrekquiera.com/support"),
+            },
+            License = new OpenApiLicense
+            {
+                Name = "Licencia de API",
+                Url = new Uri("https://nombrekquiera.com/license"),
+            }
+        });
     }
     
     );
@@ -93,13 +111,31 @@ builder.Services.AddCors(p => p.AddPolicy("PoliticaCors", build =>
 }));
 
 //Soporte para cache
-builder.Services.AddResponseCaching();
+var apiVersioningBuilder= builder.Services.AddApiVersioning(opcion =>
+{
+    opcion.AssumeDefaultVersionWhenUnspecified = true; //al ponerlo en false, no se asume la version por defecto y es necesario especidicar la version
+    opcion.DefaultApiVersion = new ApiVersion(1, 0);
+    opcion.ReportApiVersions = true;
+    //opcion.ApiVersionReader =  ApiVersionReader.Combine(
+    //    new QueryStringApiVersionReader("api-version")
+    //);
+});
+
+apiVersioningBuilder.AddApiExplorer(opcion =>
+{
+    opcion.GroupNameFormat = "'v'VVV";
+    opcion.SubstituteApiVersionInUrl = true; //Esto permite que la version se vea en la URL
+});
 
 
 // Repositorios
 builder.Services.AddScoped<ICategoriaRepositorio, CategotiaRepositorio>();
 builder.Services.AddScoped<IPeliculaRepositorio, PeliculaRepositorio>();
 builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>();
+
+//Soporte para el versionamiento
+builder.Services.AddApiVersioning();
+
 
 // AutoMapper
 builder.Services.AddAutoMapper(typeof(PeliculasMapper));
@@ -110,7 +146,12 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI(opciones =>
+    {
+        opciones.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiPeliculasV1");
+        //opciones.SwaggerEndpoint("/swagger/v2/swagger.json", "ApiPeliculasV2");
+        //opciones.RoutePrefix = string.Empty; // Esto hace que Swagger UI esté disponible en la raíz de la aplicación
+    });
 }
 
 app.UseHttpsRedirection();

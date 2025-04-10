@@ -4,6 +4,7 @@ using ApiPeliculas.Models;
 using ApiPeliculas.Models.Dtos;
 using ApiPeliculas.Repositorio;
 using ApiPeliculas.Repositorio.IRepositorio;
+using Asp.Versioning;
 using AutoMapper;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -11,8 +12,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiPeliculas.Controllers
 {
-    [Route("api/usuarios")]
+    [Route("api/v{version:ApiVersion}/usuarios")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;

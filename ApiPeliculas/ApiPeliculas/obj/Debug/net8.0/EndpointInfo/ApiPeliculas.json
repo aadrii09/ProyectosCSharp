@@ -2,10 +2,20 @@
   "openapi": "3.0.1",
   "info": {
     "title": "ApiPeliculas",
-    "version": "1.0"
+    "description": "API de Peliculas",
+    "termsOfService": "https://nombrekquiera.com/terms",
+    "contact": {
+      "name": "Soporte API",
+      "url": "https://nombrekquiera.com/support"
+    },
+    "license": {
+      "name": "Licencia de API",
+      "url": "https://nombrekquiera.com/license"
+    },
+    "version": "v1"
   },
   "paths": {
-    "/api/categoria/mostrarTodo": {
+    "/api/v1/categoria/mostrarTodo": {
       "get": {
         "tags": [
           "Categorias"
@@ -37,7 +47,7 @@
         }
       }
     },
-    "/api/categoria/mostrar/{categoriaId}": {
+    "/api/v1/categoria/mostrar/{categoriaId}": {
       "get": {
         "tags": [
           "Categorias"
@@ -121,7 +131,7 @@
         }
       }
     },
-    "/api/categoria": {
+    "/api/v1/categoria": {
       "post": {
         "tags": [
           "Categorias"
@@ -195,7 +205,7 @@
         }
       }
     },
-    "/api/categoria/actualizar/{categoriaId}": {
+    "/api/v1/categoria/actualizar/{categoriaId}": {
       "patch": {
         "tags": [
           "Categorias"
@@ -382,7 +392,7 @@
         }
       }
     },
-    "/api/categoria/borrar/{categoriaId}": {
+    "/api/v1/categoria/borrar/{categoriaId}": {
       "delete": {
         "tags": [
           "Categorias"
@@ -469,7 +479,7 @@
         }
       }
     },
-    "/api/peliculas/mostrarTodo": {
+    "/api/v1/peliculas/mostrarTodo": {
       "get": {
         "tags": [
           "Peliculas"
@@ -501,7 +511,7 @@
         }
       }
     },
-    "/api/peliculas/mostrar/{peliculaId}": {
+    "/api/v1/peliculas/mostrar/{peliculaId}": {
       "get": {
         "tags": [
           "Peliculas"
@@ -585,7 +595,7 @@
         }
       }
     },
-    "/api/peliculas": {
+    "/api/v1/peliculas": {
       "post": {
         "tags": [
           "Peliculas"
@@ -659,7 +669,7 @@
         }
       }
     },
-    "/api/peliculas/actualizar/{peliculaId}": {
+    "/api/v1/peliculas/actualizar/{peliculaId}": {
       "patch": {
         "tags": [
           "Peliculas"
@@ -725,7 +735,7 @@
         }
       }
     },
-    "/api/peliculas/borrar/{peliculaId}": {
+    "/api/v1/peliculas/borrar/{peliculaId}": {
       "delete": {
         "tags": [
           "Peliculas"
@@ -812,7 +822,7 @@
         }
       }
     },
-    "/api/peliculas/MostrarPeliculaXIdCategoria/{categoriaId}": {
+    "/api/v1/peliculas/MostrarPeliculaXIdCategoria/{categoriaId}": {
       "get": {
         "tags": [
           "Peliculas"
@@ -858,7 +868,7 @@
         }
       }
     },
-    "/api/peliculas/buscar": {
+    "/api/v1/peliculas/buscar": {
       "get": {
         "tags": [
           "Peliculas"
@@ -902,7 +912,7 @@
         }
       }
     },
-    "/api/usuarios/mostrarTodo": {
+    "/api/v1/usuarios/mostrarTodo": {
       "get": {
         "tags": [
           "Usuarios"
@@ -934,7 +944,7 @@
         }
       }
     },
-    "/api/usuarios/mostrar/{usuarioId}": {
+    "/api/v1/usuarios/mostrar/{usuarioId}": {
       "get": {
         "tags": [
           "Usuarios"
@@ -1018,7 +1028,7 @@
         }
       }
     },
-    "/api/usuarios/registro": {
+    "/api/v1/usuarios/registro": {
       "post": {
         "tags": [
           "Usuarios"
@@ -1072,7 +1082,7 @@
         }
       }
     },
-    "/api/usuarios/login": {
+    "/api/v1/usuarios/login": {
       "post": {
         "tags": [
           "Usuarios"
@@ -1126,7 +1136,7 @@
         }
       }
     },
-    "/api/usuarios/eliminar/{usuarioId}": {
+    "/api/v1/usuarios/eliminar/{usuarioId}": {
       "delete": {
         "tags": [
           "Usuarios"

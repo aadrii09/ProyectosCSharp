@@ -347,3 +347,7 @@ C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\ob
 C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\bin\Debug\net8.0\Microsoft.Practices.ServiceLocation.dll
 C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\bin\Debug\net8.0\XAct.Core.PCL.dll
 C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\bin\Debug\net8.0\Asp.Versioning.Abstractions.dll
+C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\bin\Debug\net8.0\Asp.Versioning.Http.dll
+C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\bin\Debug\net8.0\Asp.Versioning.Mvc.dll
+C:\Users\adrian.castrobeiro\Desktop\ProyectosCSharp\ApiPeliculas\ApiPeliculas\bin\Debug\net8.0\Asp.Versioning.Mvc.ApiExplorer.dll
