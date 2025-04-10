@@ -1,7 +1,7 @@
 {
   "openapi": "3.0.1",
   "info": {
-    "title": "ApiPeliculas",
+    "title": "ApiPeliculas V1",
     "description": "API de Peliculas",
     "termsOfService": "https://nombrekquiera.com/terms",
     "contact": {
@@ -12,7 +12,7 @@
       "name": "Licencia de API",
       "url": "https://nombrekquiera.com/license"
     },
-    "version": "v1"
+    "version": "v1.0"
   },
   "paths": {
     "/api/v1/categoria/mostrarTodo": {

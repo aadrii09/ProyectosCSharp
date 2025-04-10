@@ -63,9 +63,9 @@ builder.Services.AddSwaggerGen(options =>
             }
         });
         options.SwaggerDoc("v1", new OpenApiInfo 
-        {
-            Title = "ApiPeliculas", 
-            Version = "v1",
+           {
+            Title = "ApiPeliculas V1", 
+            Version = "v1.0",
             Description = "API de Peliculas",
             TermsOfService = new Uri("https://nombrekquiera.com/terms"),
             Contact = new OpenApiContact
@@ -78,10 +78,27 @@ builder.Services.AddSwaggerGen(options =>
                 Name = "Licencia de API",
                 Url = new Uri("https://nombrekquiera.com/license"),
             }
+           }
+        );
+        options.SwaggerDoc("v2", new OpenApiInfo
+        {
+            Title = "ApiPeliculas V2",
+            Version = "v2.0",
+            Description = "API de Peliculas v2",
+            TermsOfService = new Uri("https://nombrekquiera.com/terms"),
+            Contact = new OpenApiContact
+            {
+                Name = "Soporte API",
+                Url = new Uri("https://nombrekquiera.com/support"),
+            },
+            License = new OpenApiLicense
+            {
+                Name = "Licencia de API",
+                Url = new Uri("https://nombrekquiera.com/license"),
+            }
         });
-    }
-    
-    );
+    }   
+);
 
 //Configuración de la autenticación JWT
 builder.Services.AddAuthentication(x =>
@@ -149,7 +166,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI(opciones =>
     {
         opciones.SwaggerEndpoint("/swagger/v1/swagger.json", "ApiPeliculasV1");
-        //opciones.SwaggerEndpoint("/swagger/v2/swagger.json", "ApiPeliculasV2");
+        opciones.SwaggerEndpoint("/swagger/v2/swagger.json", "ApiPeliculasV2");
         //opciones.RoutePrefix = string.Empty; // Esto hace que Swagger UI esté disponible en la raíz de la aplicación
     });
 }
