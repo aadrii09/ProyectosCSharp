@@ -5,6 +5,8 @@ using ApiPeliculas.Data;
 using ApiPeliculas.Models;
 using ApiPeliculas.Models.Dtos;
 using ApiPeliculas.Repositorio.IRepositorio;
+using AutoMapper;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.IdentityModel.Tokens;
 using XSystem.Security.Cryptography;
 
@@ -14,12 +16,18 @@ namespace ApiPeliculas.Repositorio
     {
         private readonly ApplicationDbContext _bd;
         private string claveSecreta;
+        private readonly UserManager<Usuario> _userManager;
+        private readonly RoleManager<IdentityRole> _roleManager; //para el manejo de roles
+        private readonly IMapper _mapper;
 
         //constructor
-        public UsuarioRepositorio(ApplicationDbContext bd, IConfiguration config)
+        public UsuarioRepositorio(ApplicationDbContext bd, IConfiguration config, UserManager<Usuario> userManager, RoleManager<IdentityRole> roleManager, IMapper mapper)
         {
             _bd = bd;
             claveSecreta = config.GetValue<string>("ApiSettings:Secreta");
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _mapper = mapper;
         }
 
         public Usuario GetUsuario(int UsuarioId)
@@ -34,10 +42,11 @@ namespace ApiPeliculas.Repositorio
 
         public bool IsUniqueUsuario(string nombreUsuario)
         {
+            // Cambio de AppUsuario a Usuario
             var usuarioBd = _bd.Usuario.FirstOrDefault(u => u.NombreUsuario.ToLower() == nombreUsuario.ToLower());
             if (usuarioBd == null)
             {
-                return true; 
+                return true;
             }
             return false;
         }
@@ -45,18 +54,33 @@ namespace ApiPeliculas.Repositorio
         public async Task<UsuarioLoginRespuestaDto> Login(UsuarioLoginDto usuarioLoginDto)
         {
             var passwordEnciptada = obtenermd5(usuarioLoginDto.Password);
-            var usuario = _bd.Usuario.FirstOrDefault(u => u.NombreUsuario.ToLower() == usuarioLoginDto.NombreUsuario.ToLower() && u.Password == passwordEnciptada);
+            // Cambio de AppUsuario a Usuario y de UserName a NombreUsuario
+            var usuario = _bd.Usuario.FirstOrDefault(u => u.NombreUsuario.ToLower() == usuarioLoginDto.NombreUsuario.ToLower());
 
-            //Validaamos si el usuario no existe con la combinadion de nombre y contraseña correcta
+            // Verificar si usuario es null antes de usar CheckPasswordAsync
             if (usuario == null)
             {
                 return new UsuarioLoginRespuestaDto()
-                { 
+                {
                     Token = "",
                     Usuario = null
                 };
             }
+
+            bool isValid = await _userManager.CheckPasswordAsync(usuario, usuarioLoginDto.Password);
+
+            //Validaamos si el usuario no existe con la combinadion de nombre y contraseña correcta
+            if (!isValid)
+            {
+                return new UsuarioLoginRespuestaDto()
+                {
+                    Token = "",
+                    Usuario = null
+                };
+            }
+
             //Aqui existe el usuario entonces podemosprocesar el login
+            var roles = await _userManager.GetRolesAsync(usuario);
             var manejadoorToken = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(claveSecreta);
 
@@ -64,12 +88,12 @@ namespace ApiPeliculas.Repositorio
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
+                    // Cambio de UserName a NombreUsuario
                     new Claim(ClaimTypes.Name, usuario.NombreUsuario.ToString()),
-                    new Claim(ClaimTypes.Role, usuario.Role)
+                    new Claim(ClaimTypes.Role, roles.FirstOrDefault() ?? usuario.Role)
                 }),
                 Expires = DateTime.UtcNow.AddDays(30),
                 SigningCredentials = new(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
-
             };
 
             var token = manejadoorToken.CreateToken(tokenDescriptor);
@@ -77,7 +101,7 @@ namespace ApiPeliculas.Repositorio
             UsuarioLoginRespuestaDto usuarioLoginRespuestaDto = new UsuarioLoginRespuestaDto()
             {
                 Token = manejadoorToken.WriteToken(token),
-                Usuario = usuario
+                Usuario = _mapper.Map<UsuarioDatosDto>(usuario)
             };
 
             return usuarioLoginRespuestaDto;
@@ -97,7 +121,6 @@ namespace ApiPeliculas.Repositorio
 
             _bd.Usuario.Add(usuario);
             await _bd.SaveChangesAsync();
-            usuario.Password = passwordEncriptada;
             return usuario;
         }
 
