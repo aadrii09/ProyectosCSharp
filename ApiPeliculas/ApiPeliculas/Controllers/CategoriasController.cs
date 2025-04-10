@@ -28,7 +28,8 @@ namespace ApiPeliculas.Controllers
         //[AllowAnonymous]  /eso sirve para poner publico el endpoint en el caso de que este todo el controller en privado
        
         [HttpGet("mostrarTodo")]
-        [ResponseCache(Duration = 20)]
+        //[ResponseCache(Duration = 20)]
+        [ResponseCache(CacheProfileName= "Default20segs")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         public IActionResult GetCategorias()
@@ -44,7 +45,8 @@ namespace ApiPeliculas.Controllers
 
 
         [HttpGet("mostrar/{categoriaId:int}", Name = "GetCategoria")]
-        [ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
+        //[ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]
+        [ResponseCache(CacheProfileName = "Default30segs")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

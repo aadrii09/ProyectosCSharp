@@ -4,6 +4,7 @@ using ApiPeliculas.PeliculasMapper;
 using ApiPeliculas.Repositorio;
 using ApiPeliculas.Repositorio.IRepositorio;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -21,7 +22,12 @@ var key = builder.Configuration.GetValue<string>("ApiSettings:Secreta");
 builder.Services.AddDbContext<ApplicationDbContext>(opciones =>
     opciones.UseSqlServer(builder.Configuration.GetConnectionString("ConexionSql")));
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(opcion =>
+{
+    //Cache profile. Cache global para los endpoints
+    opcion.CacheProfiles.Add("Default20segs", new CacheProfile(){Duration = 20});
+    opcion.CacheProfiles.Add("Default30segs", new CacheProfile() { Duration = 30 });
+});
 builder.Services.AddEndpointsApiExplorer();
 // Configuración de Swagger para integrar la autenticación JWT
 // Esto añade un botón de autorización en la interfaz de Swagger UI que permite 

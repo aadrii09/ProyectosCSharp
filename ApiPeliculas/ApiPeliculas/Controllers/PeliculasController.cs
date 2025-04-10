@@ -25,6 +25,7 @@ namespace ApiPeliculas.Controllers
         }
 
         [HttpGet("mostrarTodo")]
+        [ResponseCache(CacheProfileName = "Default20segs")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         //[EnableCors("PoliticaCors")] //Aplica la politica CORS a este endpoint
@@ -40,6 +41,7 @@ namespace ApiPeliculas.Controllers
         }
 
         [HttpGet("mostrar/{peliculaId:int}", Name = "GetPelicula")]
+        [ResponseCache(CacheProfileName = "Default30segs")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]

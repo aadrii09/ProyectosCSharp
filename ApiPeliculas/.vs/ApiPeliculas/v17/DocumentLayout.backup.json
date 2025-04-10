@@ -18,21 +18,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CategoriasController.cs",
-              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\CategoriasController.cs",
-              "RelativeDocumentMoniker": "ApiPeliculas\\Controllers\\CategoriasController.cs",
-              "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\CategoriasController.cs",
-              "RelativeToolTip": "ApiPeliculas\\Controllers\\CategoriasController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwC4AAABMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-04-09T14:04:46.87Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
@@ -43,13 +30,26 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CategoriasController.cs",
+              "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\CategoriasController.cs",
+              "RelativeDocumentMoniker": "ApiPeliculas\\Controllers\\CategoriasController.cs",
+              "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Controllers\\CategoriasController.cs",
+              "RelativeToolTip": "ApiPeliculas\\Controllers\\CategoriasController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAwCQAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T14:04:46.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Program.cs",
               "RelativeDocumentMoniker": "ApiPeliculas\\Program.cs",
               "ToolTip": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\Program.cs",
               "RelativeToolTip": "ApiPeliculas\\Program.cs",
-              "ViewState": "AgIAADwAAAAAAAAAAAAAAFkAAAAmAAAAAAAAAA==",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAAABwAAABUAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-04-09T11:08:39.524Z",
               "EditorCaption": ""
