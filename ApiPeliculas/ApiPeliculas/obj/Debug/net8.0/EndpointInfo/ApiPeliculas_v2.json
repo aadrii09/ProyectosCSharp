@@ -15,7 +15,7 @@
     "version": "v2.0"
   },
   "paths": {
-    "/api/v2/categoria/mostrarTodo": {
+    "/api/v2/categoria/GetString": {
       "get": {
         "tags": [
           "Categorias"
@@ -53,20 +53,70 @@
         }
       }
     },
-    "/api/v2/categoria/mostrar/{categoriaId}": {
+    "/api/v{version}/usuarios/mostrarTodo": {
       "get": {
         "tags": [
-          "Categorias"
+          "Usuarios"
         ],
-        "operationId": "GetCategoria",
         "parameters": [
           {
-            "name": "categoriaId",
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "403": {
+            "description": "Forbidden",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ProblemDetails"
+                }
+              }
+            }
+          },
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/v{version}/usuarios/mostrar/{usuarioId}": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "operationId": "GetUsuario",
+        "parameters": [
+          {
+            "name": "usuarioId",
             "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
+            }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -137,26 +187,36 @@
         }
       }
     },
-    "/api/v2/categoria": {
+    "/api/v{version}/usuarios/registro": {
       "post": {
         "tags": [
-          "Categorias"
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
         ],
         "requestBody": {
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearCategoriaDto"
+                "$ref": "#/components/schemas/UsuarioRegistroDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearCategoriaDto"
+                "$ref": "#/components/schemas/UsuarioRegistroDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CrearCategoriaDto"
+                "$ref": "#/components/schemas/UsuarioRegistroDto"
               }
             }
           }
@@ -187,44 +247,22 @@
           },
           "500": {
             "description": "Internal Server Error"
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
           }
         }
       }
     },
-    "/api/v2/categoria/actualizar/{categoriaId}": {
-      "patch": {
+    "/api/v{version}/usuarios/login": {
+      "post": {
         "tags": [
-          "Categorias"
+          "Usuarios"
         ],
-        "operationId": "PatchCategoria",
         "parameters": [
           {
-            "name": "categoriaId",
+            "name": "version",
             "in": "path",
             "required": true,
             "schema": {
-              "type": "integer",
-              "format": "int32"
+              "type": "string"
             }
           }
         ],
@@ -232,148 +270,27 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/CategoriaDto"
+                "$ref": "#/components/schemas/UsuarioLoginDto"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/CategoriaDto"
+                "$ref": "#/components/schemas/UsuarioLoginDto"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/CategoriaDto"
+                "$ref": "#/components/schemas/UsuarioLoginDto"
               }
             }
           }
         },
         "responses": {
-          "204": {
-            "description": "No Content"
+          "201": {
+            "description": "Created"
           },
           "400": {
             "description": "Bad Request",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          }
-        }
-      },
-      "put": {
-        "tags": [
-          "Categorias"
-        ],
-        "operationId": "PutCategoria",
-        "parameters": [
-          {
-            "name": "categoriaId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "integer",
-              "format": "int32"
-            }
-          }
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoriaDto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoriaDto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CategoriaDto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "401": {
-            "description": "Unauthorized",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/ProblemDetails"
-                }
-              }
-            }
-          },
-          "404": {
-            "description": "Not Found",
             "content": {
               "text/plain": {
                 "schema": {
@@ -398,29 +315,34 @@
         }
       }
     },
-    "/api/v2/categoria/borrar/{categoriaId}": {
+    "/api/v{version}/usuarios/eliminar/{usuarioId}": {
       "delete": {
         "tags": [
-          "Categorias"
+          "Usuarios"
         ],
-        "operationId": "DeleteCategoria",
+        "operationId": "EliminarUsuario",
         "parameters": [
           {
-            "name": "categoriaId",
+            "name": "usuarioId",
             "in": "path",
             "required": true,
             "schema": {
               "type": "integer",
               "format": "int32"
             }
+          },
+          {
+            "name": "version",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "400": {
-            "description": "Bad Request",
+          "403": {
+            "description": "Forbidden",
             "content": {
               "text/plain": {
                 "schema": {
@@ -439,8 +361,11 @@
               }
             }
           },
-          "401": {
-            "description": "Unauthorized",
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request",
             "content": {
               "text/plain": {
                 "schema": {
@@ -478,9 +403,6 @@
                 }
               }
             }
-          },
-          "500": {
-            "description": "Internal Server Error"
           }
         }
       }
@@ -488,42 +410,6 @@
   },
   "components": {
     "schemas": {
-      "CategoriaDto": {
-        "required": [
-          "nombre"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer",
-            "format": "int32"
-          },
-          "nombre": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          },
-          "fechaCreacion": {
-            "type": "string",
-            "format": "date-time"
-          }
-        },
-        "additionalProperties": false
-      },
-      "CrearCategoriaDto": {
-        "required": [
-          "nombre"
-        ],
-        "type": "object",
-        "properties": {
-          "nombre": {
-            "maxLength": 100,
-            "minLength": 1,
-            "type": "string"
-          }
-        },
-        "additionalProperties": false
-      },
       "ProblemDetails": {
         "type": "object",
         "properties": {
@@ -550,6 +436,51 @@
           }
         },
         "additionalProperties": { }
+      },
+      "UsuarioLoginDto": {
+        "required": [
+          "nombreUsuario",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "nombreUsuario": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      },
+      "UsuarioRegistroDto": {
+        "required": [
+          "nombre",
+          "nombreUsuario",
+          "password"
+        ],
+        "type": "object",
+        "properties": {
+          "nombreUsuario": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "nombre": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "password": {
+            "minLength": 1,
+            "type": "string"
+          },
+          "role": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
       }
     },
     "securitySchemes": {

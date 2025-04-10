@@ -9,14 +9,14 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using XAct.Diagnostics;
 
-namespace ApiPeliculas.Controllers
+namespace ApiPeliculas.Controllers.Version_1._0
 {
     //[Authorize(Roles = "Admin")]  //Autorizacion global para todos los endopoints del controller
     //[ResponseCache(Duration= 20)] // Se puede poner aqui para que afecte de manera global a todos los endpoints
     [Route("api/v{version:ApiVersion}/categoria")]
     [ApiController]
     [ApiVersion("1.0")] //Version de la API
-    [ApiVersion("2.0")]
+    //[ApiVersion("2.0")]
     public class CategoriasController : ControllerBase
     {
         private readonly ICategoriaRepositorio _categoriaRepositorio;
@@ -32,7 +32,7 @@ namespace ApiPeliculas.Controllers
        
         [HttpGet("mostrarTodo")]
         //[ResponseCache(Duration = 20)]
-        [MapToApiVersion("1.0")] //Version de la API a escogen en el endpoint
+        //[MapToApiVersion("1.0")] //Version de la API a escogen en el endpoint
         [ResponseCache(CacheProfileName= "Default20segs")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
@@ -47,14 +47,15 @@ namespace ApiPeliculas.Controllers
             return Ok(listaCategoriasDto);
         }
 
-//PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA
-        [HttpGet("mostrarTodo")]
-        [MapToApiVersion("2.0")] //Version de la API a escogen en el endpoint
+        ////PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  
+        [HttpGet("GetString")]
+        [Obsolete("Este endpoint esta obsoleto, favor use la version 2.0")]
+        //[MapToApiVersion("2.0")] //Version de la API a escogen en el endpoint
         public IEnumerable<string> Get()
         {
             return new string[] { "valor1", "valor2", "valor3" };
         }
-//PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA
+        ////PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  PRUEBA  
 
         [HttpGet("mostrar/{categoriaId:int}", Name = "GetCategoria")]
         //[ResponseCache(Location = ResponseCacheLocation.None, NoStore = true)]

@@ -1,6 +1,452 @@
 [
   {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "EliminarUsuario",
+    "RelativePath": "api/v{version}/usuarios/eliminar/{usuarioId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "EliminarUsuario"
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "EliminarUsuario",
+    "RelativePath": "api/v{version}/usuarios/eliminar/{usuarioId}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "EliminarUsuario"
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "Login",
+    "RelativePath": "api/v{version}/usuarios/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioLoginDto",
+        "Type": "ApiPeliculas.Models.Dtos.UsuarioLoginDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "Login",
+    "RelativePath": "api/v{version}/usuarios/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioLoginDto",
+        "Type": "ApiPeliculas.Models.Dtos.UsuarioLoginDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "GetUsuario",
+    "RelativePath": "api/v{version}/usuarios/mostrar/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetUsuario"
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "GetUsuario",
+    "RelativePath": "api/v{version}/usuarios/mostrar/{usuarioId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 404
+      }
+    ],
+    "EndpointName": "GetUsuario"
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "GetUsuarios",
+    "RelativePath": "api/v{version}/usuarios/mostrarTodo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "GetUsuarios",
+    "RelativePath": "api/v{version}/usuarios/mostrarTodo",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 403
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "Registro",
+    "RelativePath": "api/v{version}/usuarios/registro",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioRegistroDto",
+        "Type": "ApiPeliculas.Models.Dtos.UsuarioRegistroDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Global.UsuariosController",
+    "Method": "Registro",
+    "RelativePath": "api/v{version}/usuarios/registro",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "usuarioRegistroDto",
+        "Type": "ApiPeliculas.Models.Dtos.UsuarioRegistroDto",
+        "IsRequired": true
+      },
+      {
+        "Name": "version",
+        "Type": "",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 201
+      },
+      {
+        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 400
+      },
+      {
+        "Type": "System.Void",
+        "MediaTypes": [],
+        "StatusCode": 500
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.CategoriasController",
     "Method": "CrearCategoria",
     "RelativePath": "api/v1/categoria",
     "HttpMethod": "POST",
@@ -45,7 +491,7 @@
     ]
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.CategoriasController",
     "Method": "ActualizarPatchCategoria",
     "RelativePath": "api/v1/categoria/actualizar/{categoriaId}",
     "HttpMethod": "PATCH",
@@ -91,7 +537,7 @@
     "EndpointName": "PatchCategoria"
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.CategoriasController",
     "Method": "ActualizarPutCategoria",
     "RelativePath": "api/v1/categoria/actualizar/{categoriaId}",
     "HttpMethod": "PUT",
@@ -151,7 +597,7 @@
     "EndpointName": "PutCategoria"
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.CategoriasController",
     "Method": "EliminarCategoria",
     "RelativePath": "api/v1/categoria/borrar/{categoriaId}",
     "HttpMethod": "DELETE",
@@ -206,7 +652,27 @@
     "EndpointName": "DeleteCategoria"
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.CategoriasController",
+    "Method": "Get",
+    "RelativePath": "api/v1/categoria/GetString",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[System.String, System.Private.CoreLib, Version=8.0.0.0, Culture=neutral, PublicKeyToken=7cec85d7bea7798e]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.CategoriasController",
     "Method": "GetCategoria",
     "RelativePath": "api/v1/categoria/mostrar/{categoriaId}",
     "HttpMethod": "GET",
@@ -256,7 +722,7 @@
     "EndpointName": "GetCategoria"
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.CategoriasController",
     "Method": "GetCategorias",
     "RelativePath": "api/v1/categoria/mostrarTodo",
     "HttpMethod": "GET",
@@ -281,7 +747,7 @@
     ]
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.PeliculasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.PeliculasController",
     "Method": "CrearPelicula",
     "RelativePath": "api/v1/peliculas",
     "HttpMethod": "POST",
@@ -326,7 +792,7 @@
     ]
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.PeliculasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.PeliculasController",
     "Method": "ActualizarPatchPelicula",
     "RelativePath": "api/v1/peliculas/actualizar/{peliculaId}",
     "HttpMethod": "PATCH",
@@ -368,7 +834,7 @@
     "EndpointName": "PatchPelicula"
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.PeliculasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.PeliculasController",
     "Method": "EliminarPelicula",
     "RelativePath": "api/v1/peliculas/borrar/{peliculaId}",
     "HttpMethod": "DELETE",
@@ -423,7 +889,7 @@
     "EndpointName": "DeletePelicula"
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.PeliculasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.PeliculasController",
     "Method": "Buscar",
     "RelativePath": "api/v1/peliculas/buscar",
     "HttpMethod": "GET",
@@ -459,7 +925,7 @@
     ]
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.PeliculasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.PeliculasController",
     "Method": "GetPelicula",
     "RelativePath": "api/v1/peliculas/mostrar/{peliculaId}",
     "HttpMethod": "GET",
@@ -509,7 +975,7 @@
     "EndpointName": "GetPelicula"
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.PeliculasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.PeliculasController",
     "Method": "GetPeliculaCategoria",
     "RelativePath": "api/v1/peliculas/MostrarPeliculaXIdCategoria/{categoriaId}",
     "HttpMethod": "GET",
@@ -545,7 +1011,7 @@
     ]
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.PeliculasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_1._0.PeliculasController",
     "Method": "GetPelicula",
     "RelativePath": "api/v1/peliculas/mostrarTodo",
     "HttpMethod": "GET",
@@ -570,462 +1036,9 @@
     ]
   },
   {
-    "ContainingType": "ApiPeliculas.Controllers.UsuariosController",
-    "Method": "EliminarUsuario",
-    "RelativePath": "api/v1/usuarios/eliminar/{usuarioId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "usuarioId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 403
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ],
-    "EndpointName": "EliminarUsuario"
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.UsuariosController",
-    "Method": "Login",
-    "RelativePath": "api/v1/usuarios/login",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "usuarioLoginDto",
-        "Type": "ApiPeliculas.Models.Dtos.UsuarioLoginDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 201
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      }
-    ]
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.UsuariosController",
-    "Method": "GetUsuario",
-    "RelativePath": "api/v1/usuarios/mostrar/{usuarioId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "usuarioId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 403
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ],
-    "EndpointName": "GetUsuario"
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.UsuariosController",
-    "Method": "GetUsuarios",
-    "RelativePath": "api/v1/usuarios/mostrarTodo",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [],
-    "ReturnTypes": [
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 403
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.UsuariosController",
-    "Method": "Registro",
-    "RelativePath": "api/v1/usuarios/registro",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "usuarioRegistroDto",
-        "Type": "ApiPeliculas.Models.Dtos.UsuarioRegistroDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 201
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      }
-    ]
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
-    "Method": "CrearCategoria",
-    "RelativePath": "api/v2/categoria",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "crearCategoriaDto",
-        "Type": "ApiPeliculas.Models.Dtos.CrearCategoriaDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 201
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 401
-      }
-    ]
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
-    "Method": "ActualizarPatchCategoria",
-    "RelativePath": "api/v2/categoria/actualizar/{categoriaId}",
-    "HttpMethod": "PATCH",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "categoriaId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "categoriaDto",
-        "Type": "ApiPeliculas.Modelos.Dtos.CategoriaDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 401
-      }
-    ],
-    "EndpointName": "PatchCategoria"
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
-    "Method": "ActualizarPutCategoria",
-    "RelativePath": "api/v2/categoria/actualizar/{categoriaId}",
-    "HttpMethod": "PUT",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "categoriaId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      },
-      {
-        "Name": "categoriaDto",
-        "Type": "ApiPeliculas.Modelos.Dtos.CategoriaDto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 401
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      }
-    ],
-    "EndpointName": "PutCategoria"
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
-    "Method": "EliminarCategoria",
-    "RelativePath": "api/v2/categoria/borrar/{categoriaId}",
-    "HttpMethod": "DELETE",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "categoriaId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 204
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 401
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 500
-      }
-    ],
-    "EndpointName": "DeleteCategoria"
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
-    "Method": "GetCategoria",
-    "RelativePath": "api/v2/categoria/mostrar/{categoriaId}",
-    "HttpMethod": "GET",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "categoriaId",
-        "Type": "System.Int32",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 403
-      },
-      {
-        "Type": "System.Void",
-        "MediaTypes": [],
-        "StatusCode": 200
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 400
-      },
-      {
-        "Type": "Microsoft.AspNetCore.Mvc.ProblemDetails",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 404
-      }
-    ],
-    "EndpointName": "GetCategoria"
-  },
-  {
-    "ContainingType": "ApiPeliculas.Controllers.CategoriasController",
+    "ContainingType": "ApiPeliculas.Controllers.Version_2._0.CategoriasController",
     "Method": "Get",
-    "RelativePath": "api/v2/categoria/mostrarTodo",
+    "RelativePath": "api/v2/categoria/GetString",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

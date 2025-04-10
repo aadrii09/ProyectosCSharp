@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiPeliculas.Controllers
+namespace ApiPeliculas.Controllers.Version_1._0
 {
     [Route("api/v{version:ApiVersion}/peliculas")]
     [ApiController]

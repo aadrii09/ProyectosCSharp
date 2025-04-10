@@ -10,11 +10,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
-namespace ApiPeliculas.Controllers
+namespace ApiPeliculas.Controllers.Global
 {
     [Route("api/v{version:ApiVersion}/usuarios")]
     [ApiController]
-    [ApiVersion("1.0")]
+    //[ApiVersion("1.0")]
+    [ApiVersionNeutral] //Version neutral, no se especifica version en el endpoint
     public class UsuariosController : ControllerBase
     {
         private readonly IUsuarioRepositorio _usuarioRepositorio;
@@ -25,7 +26,7 @@ namespace ApiPeliculas.Controllers
         {
             _usuarioRepositorio = usuarioRepo;
             _mapper = mapper;
-            this._respuestaApi = new();
+            _respuestaApi = new();
         }
 
         [Authorize(Roles = "Admin")]
