@@ -1,6 +1,7 @@
 using System.Text;
 using ApiPeliculas.Data;
 using ApiPeliculas.Middleware; // Añadir esta línea para importar el namespace
+using ApiPeliculas.Models;
 using ApiPeliculas.PeliculasMapper;
 using ApiPeliculas.Repositorio;
 using ApiPeliculas.Repositorio.IRepositorio;
@@ -130,7 +131,7 @@ builder.Services.AddCors(p => p.AddPolicy("PoliticaCors", build =>
 }));
 
 //Soporte para autenticacion con .NET Identity
-builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+builder.Services.AddIdentity<AppUsuario, IdentityRole>()
     .AddEntityFrameworkStores<ApplicationDbContext>();
 
 //Soporte para cache

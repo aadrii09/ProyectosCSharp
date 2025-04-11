@@ -51,7 +51,7 @@ namespace ApiPeliculas.Controllers.Global
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
 
-        public IActionResult GetUsuario(int usuarioId)
+        public IActionResult GetUsuario(string usuarioId)
         {
 
             var itemUsuario = _usuarioRepositorio.GetUsuario(usuarioId);
@@ -116,22 +116,24 @@ namespace ApiPeliculas.Controllers.Global
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpDelete("eliminar/{usuarioId:int}", Name = "EliminarUsuario")]
+        [HttpDelete("eliminar/{usuarioId}", Name = "EliminarUsuario")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
-        public IActionResult EliminarUsuario(int usuarioId)
+        public IActionResult EliminarUsuario(string usuarioId)
         {
-            var itemUsuario = _usuarioRepositorio.GetUsuario(usuarioId);
-            if (itemUsuario == null)
+            var appUsuario = _usuarioRepositorio.GetUsuario(usuarioId);
+            if (appUsuario == null)
             {
                 return NotFound();
             }
-            _usuarioRepositorio.Eliminar(itemUsuario);
+
+            _usuarioRepositorio.Eliminar(appUsuario);
             _respuestaApi.StatusCode = HttpStatusCode.NoContent;
             _respuestaApi.IsSuccess = true;
             return Ok(_respuestaApi);
         }
+
     }
 }

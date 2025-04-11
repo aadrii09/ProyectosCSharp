@@ -31,14 +31,15 @@ namespace ApiPeliculas.Repositorio
             _mapper = mapper;
         }
 
-        public Usuario GetUsuario(int UsuarioId)
+        public AppUsuario GetUsuario(string UsuarioId)
         {
-            return _bd.Usuario.FirstOrDefault(u => u.Id == UsuarioId);
+            return _bd.AppUsuario.FirstOrDefault(u => u.Id == UsuarioId);
         }
 
-        public ICollection<Usuario> GetUsuarios()
+
+        public ICollection<AppUsuario> GetUsuarios()
         {
-            return _bd.Usuario.OrderBy(u => u.NombreUsuario).ToList();
+            return _bd.AppUsuario.OrderBy(u => u.UserName).ToList();
         }
 
         public bool IsUniqueUsuario(string usuario)
@@ -156,10 +157,11 @@ namespace ApiPeliculas.Repositorio
         //    return resp;
         //}
 
-        public void Eliminar(Usuario itemUsuario)
+        public void Eliminar(AppUsuario appUsuario)
         {
-            _bd.Usuario.Remove(itemUsuario);
+            _bd.AppUsuario.Remove(appUsuario);
             _bd.SaveChanges();
         }
+
     }
 }
