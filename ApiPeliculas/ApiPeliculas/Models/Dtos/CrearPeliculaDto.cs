@@ -8,7 +8,8 @@ namespace ApiPeliculas.Models.Dtos
         public string Descripcion { get; set; }
         public int Duracion { get; set; }
 
-        public string RutaImagen { get; set; }
+        public string? RutaImagen { get; set; }
+        public IFormFile Imagen { get; set; }
 
         public enum CrearTipoClasificacion { tres, siete, trece, diecisiete, dieciocho }
         public CrearTipoClasificacion Clasificacion { get; set; }

@@ -1,12 +1,20 @@
 {
   "Version": 1,
-  "Hash": "LhQihXwXLHnppOXNDVqxToxYRYqkxfGLfwtMMY5td4A=",
+  "Hash": "ZQOPl5Xvf5GaZH0MYXn4Y9zzIYc/TyR2FZb696hcRV0=",
   "Source": "ApiPeliculas",
   "BasePath": "_content/ApiPeliculas",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],
-  "DiscoveryPatterns": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ApiPeliculas\\wwwroot",
+      "Source": "ApiPeliculas",
+      "ContentRoot": "C:\\Users\\adrian.castrobeiro\\Desktop\\ProyectosCSharp\\ApiPeliculas\\ApiPeliculas\\wwwroot\\",
+      "BasePath": "_content/ApiPeliculas",
+      "Pattern": "**"
+    }
+  ],
   "Assets": [],
   "Endpoints": []
 }

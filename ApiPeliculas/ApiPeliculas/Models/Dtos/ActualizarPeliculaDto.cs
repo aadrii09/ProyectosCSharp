@@ -2,7 +2,7 @@
 
 namespace ApiPeliculas.Models.Dtos
 {
-    public class PeliculaDto
+    public class ActualizarPeliculaDto
     {
         public int Id { get; set; }
         public string Titulo { get; set; }

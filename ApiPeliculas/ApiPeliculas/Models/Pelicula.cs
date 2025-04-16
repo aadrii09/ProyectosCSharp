@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Runtime.CompilerServices;
 
 namespace ApiPeliculas.Models
 {
@@ -11,7 +12,9 @@ namespace ApiPeliculas.Models
         public string Descripcion { get; set; }  
         public int Duracion { get; set; }
 
-        public string RutaImagen { get; set; } 
+        public string? RutaImagen { get; set; } 
+
+        public string? RutaLocalImagen { get; set; } 
 
         public enum TipoClasificacion { tres, siete, trece, diecisiete, dieciocho }
         public TipoClasificacion Clasificacion {get; set; }    

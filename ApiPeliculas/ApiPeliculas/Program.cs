@@ -179,7 +179,8 @@ if (app.Environment.IsDevelopment())
         //opciones.RoutePrefix = string.Empty; // Esto hace que Swagger UI esté disponible en la raíz de la aplicación
     });
 }
-
+//Soporte para archivos estaticos como imagenes
+app.UseStaticFiles();
 app.UseHttpsRedirection();
 
 // Importante: UseCors debe ir antes de UseAuthentication y UseAuthorization
