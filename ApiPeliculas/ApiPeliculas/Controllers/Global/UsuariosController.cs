@@ -45,7 +45,7 @@ namespace ApiPeliculas.Controllers.Global
         }
 
         [Authorize(Roles = "Admin")]
-        [HttpGet("mostrar/{usuarioId:int}", Name = "GetUsuario")]
+        [HttpGet("mostrar/{usuarioId}", Name = "GetUsuario")]
         [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
